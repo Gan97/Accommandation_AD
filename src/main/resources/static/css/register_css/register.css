@@ -1,0 +1,14 @@
+#register_info {
+    margin-top: 5%;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 50%;
+    /*background-image: url("back.jpg");*/
+}
+
+.register_form {
+    margin: 6%;
+}
+body{
+    background-image: url("../../images/background/back.jpg");
+}

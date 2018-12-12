@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>广告列表</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" type="text/css"
+          href="bootstrap/css/old_bootstrap/old_css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dsp_css/ad_style.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dsp_css/ad_dsp_index.css"/>
+    <link rel="stylesheet" href="css/dsp_css/ad_uploader.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dsp_css/ad_image_style.css"/>
+
+    <!--js文件-->
+    <script src="js/common_js/jquery-3.2.0.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="cat_add">
+        <!--标题-->
+        <div class="cat_add_header">
+            <div class="icon"></div>
+            <div class="title">广告列表</div>
+        </div>
+        <!--添加广告按钮行-->
+        <div class="article_delete">
+            <!--广告添加按钮-->
+            <button class="btn btn-danger" id="add_button" data-toggle="modal" data-target="#Add_AD">Add_AD
+            </button>
+            <div class="modal fade" id="Add_AD">
+                <!--在modal-dialog后面设置模态框大小 modal-lg modal-sm-->
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <!--模态框头部-->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add AD Information</h4>
+                            <button type="button" class="close" data-dismiss="modal"></button>
+                        </div>
+                        <!--模态框主体-->
+                        <div class="modal-body" style="width: 100%">
+                            <div class="register_form">
+                                <div class="form-group">
+                                    <label class="control-label">AD Title</label>
+                                    <input id="ad_title" required="required" type="text" class="form-control"
+                                           placeholder="请输入广告标题"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Select Crowd</label>
+                                    <select class="form-control input-lg" id="peopleSelect" name="cat_id">
+                                        <option value="1">青少年(13~18)</option>
+                                        <option value="2">青年(19~30)</option>
+                                        <option value="3">中年(31~50)</option>
+                                        <option value="4">老年(51~65)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Select Gender</label>
+                                    <select class="form-control input-lg" id="sexSelect" name="cat_id">
+                                        <option value="1">男</option>
+                                        <option value="2">女</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Upload Picture</label>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="file" multiple="" id="ssi-upload"/>
+                                        </div>
+                                    </div>
+                                    <label class="explain" style="color: rgba(158,158,158,0.72)">请上传一张图片，格式jpg</label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">AD Classes</label>
+                                    <div id="ClassesOption">
+                                        <!--wait init-->
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">AD Describe</label>
+                                    <textarea type="text" id="comment" class="form-control" rows="5"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">RTB Price(不低于1，单位/元)</label>
+                                    <input class="form-control input-lg" type="text" name="cat_add" value=""
+                                           placeholder="请输入竞价价格" id="rtbPrice"/>
+                                </div>
+                                <input type="submit" value="submit" class="float-right bg-success text-white"
+                                       id="submit"/>
+                                <!--<button type="button" class="btn btn-primary" id="register">Register</button>-->
+                            </div>
+                        </div>
+                        <!--模态框底部-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--实际的广告列表-->
+        <div class="article_main">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th class="center">Id</th>
+                    <th class="center">AD标题</th>
+                    <th class="center">AD类别</th>
+                    <th class="center">AD内容描述</th>
+                    <th class="center">Price</th>
+                    <th class="center">Options</th>
+                </tr>
+                </thead>
+                <tbody id="ad_list">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- 最新 jQuery 核心 js 文件 -->
+    <script type="text/javascript" src="js/common_js/jquery-3.2.0.min.js"></script>
+    <script src="js/dsp_js/ssi-uploader.js"></script>
+    <script src="js/dsp_js/dsp-js.js"></script>
+</body>
+</html>
